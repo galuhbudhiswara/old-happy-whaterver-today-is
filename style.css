@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+	font-family: 'Indie Flower', cursive !important;
+	background: linear-gradient(45deg, #FDE3A7, #FFB6C1, #E6E6FA);
+	background-size: 60px 60px;
+	background-image: 
+		/* Cat faces */
+		radial-gradient(circle at 10px 10px, #FF69B4 3px, transparent 3px),
+		radial-gradient(circle at 15px 8px, #FF69B4 1px, transparent 1px),
+		radial-gradient(circle at 5px 8px, #FF69B4 1px, transparent 1px),
+		/* Strawberries */
+		radial-gradient(circle at 35px 15px, #FF6B6B 4px, transparent 4px),
+		radial-gradient(circle at 35px 12px, #90EE90 2px, transparent 2px),
+		/* Fish */
+		ellipse(6px 3px at 20px 35px), 
+		/* Hearts */
+		radial-gradient(circle at 45px 45px, #FFB6C1 2px, transparent 2px),
+		/* Dots pattern */
+		radial-gradient(circle at 50px 25px, rgba(255, 182, 193, 0.3) 1px, transparent 1px);
+	margin: 0px;
+	padding: 0px;
+	animation: backgroundShift 20s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+	0%, 100% { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+	50% { background-position: 30px 30px, -15px 10px, 25px -20px, 10px 15px, -20px 25px, 15px -10px, -5px 35px, 40px -15px; }
+}
+
+/* Floating cute elements */
+.floating-elements {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.cute-element {
+	position: absolute;
+	font-size: 24px;
+	animation: float 6s ease-in-out infinite;
+	opacity: 0.6;
+}
+
+.cute-element:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.cute-element:nth-child(2) { top: 20%; right: 15%; animation-delay: 1s; }
+.cute-element:nth-child(3) { top: 60%; left: 5%; animation-delay: 2s; }
+.cute-element:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 3s; }
+.cute-element:nth-child(5) { top: 40%; left: 85%; animation-delay: 4s; }
+.cute-element:nth-child(6) { bottom: 40%; left: 20%; animation-delay: 5s; }
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px) rotate(0deg); }
+	50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+::selection {
+	background: transparent;
+}
+
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
+}
+
+.color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
+.color2{color:#FF2B8D/*TALL POPPY*/}
+
+.card {
+	color: #013243; /*SHERPA BLUE*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
+	z-index: 10;
+}
+
+.card:hover {
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+}
+
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
+}
+
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
+}
+
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
+}
+
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
+}
+
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
+}
+
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
+}
+
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+	box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+}
+
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
+}
+
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
+}
+
+.card .details h4 {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
